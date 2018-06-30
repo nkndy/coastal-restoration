@@ -11,7 +11,6 @@ switch (ctx.body['metadata[plan]']) {
       break;
   default: 
       amount = 50000;
-  }
 }
 
 switch (ctx.body['metadata[plan]']) {
