@@ -33,6 +33,7 @@ if (ctx.body['metadata[subscriptionType]'] == "OneTime") {
 
   })();
 }
+
 // else if subscription is annual
 // Create a new customer and then a new charge for that customer:
 if (ctx.body['metadata[subscriptionType]'] == "Annual") {
