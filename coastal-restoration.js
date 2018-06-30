@@ -35,7 +35,7 @@ stripe.customers.create({
   source: ctx.body['stripeToken[id]']
 }).then(function(customer){
   return stripe.charges.create({
-    amount: 1000,
+    amount: amount,
     currency: "cad",
     customer: customer.id
   }, callback);
