@@ -94,7 +94,7 @@ stripe.customers.create({
   ]
   }, callback);
 }).then(function(subscription) {
-  
+  sendEmail();
 }).catch(function(err) {
   callback(err);
   // Deal with an error
