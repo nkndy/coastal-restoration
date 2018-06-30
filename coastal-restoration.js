@@ -30,7 +30,6 @@ stripe.customers.create({
 }).then(function(source){
   return stripe.charges.create({
     amount: 1000,
-    customer: customer.id,
     source: source
   });
 }).catch(function(err) {
