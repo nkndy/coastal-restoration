@@ -15,7 +15,23 @@ switch (ctx.body['metadata[plan]']) {
 
 // if one time donation create charge
 if (ctx.body['metadata[subscriptionType]'] == "OneTime") {
-  
+  (async function() {
+  // Create a Customer:
+  const customer = await stripe.customers.create({
+    source: ctx.body['stripeToken[id]'],
+    email: ctx.body.email,
+  });
+
+  // Charge the Customer instead of the card:
+  const charge = await stripe.charges.create({
+    amount: 1000,
+    currency: 'usd',
+    customer: customer.id,
+  });
+
+  // YOUR CODE: Save the customer ID and other info in a database for later.
+
+  })();
 }
 // else if subscription is annual
 // Create a new customer and then a new charge for that customer:
