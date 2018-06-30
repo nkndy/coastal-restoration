@@ -5,6 +5,7 @@ var postmark = require("postmark@1.6.1");
 console.log(ctx.body['metadata[subscriptionType]'])
 console.log(ctx.body['metadata[plan]'])
 
+//get one time amount
 switch (ctx.body['metadata[plan]']) {
   case 'The Coastal Ambassador Program':
       amount = 50000;
@@ -12,7 +13,7 @@ switch (ctx.body['metadata[plan]']) {
   default: 
       amount = 50000;
 }
-
+// get subscription id
 switch (ctx.body['metadata[plan]']) {
     case 'The Coastal Ambassador Program':
         plan = "plan_D8uyHuB1TW2dwB";
@@ -20,7 +21,7 @@ switch (ctx.body['metadata[plan]']) {
     default: 
         plan = "no_plan";
 }
-
+// setup email function
 function sendEmail() {  // Send an email:
   var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
   client.sendEmailWithTemplate({
@@ -46,6 +47,7 @@ function sendEmail() {  // Send an email:
     }
   });
 }
+
 // if one time donation create charge
 if (ctx.body['metadata[subscriptionType]'] == "OneTime") {
 stripe.customers.create({
@@ -68,7 +70,7 @@ stripe.customers.create({
 });
 }
 
-// else if subscription is annual
+// If subscription is annual
 // Create a new customer and then a new charge for that customer:
 if (ctx.body['metadata[subscriptionType]'] == "Annual") {
 stripe.customers.create({
