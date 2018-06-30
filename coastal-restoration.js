@@ -5,6 +5,15 @@ var postmark = require("postmark@1.6.1");
 console.log(ctx.body['metadata[subscriptionType]'])
 console.log(ctx.body['metadata[plan]'])
 
+if (ctx.body['metadata[subscriptionType]'] == 'OneTime') {
+  switch (ctx.body['metadata[plan]']) {
+    case 'The Coastal Ambassador Program':
+        amount = 50000;
+        break;
+    default: 
+        amount = 50000;
+  }
+}
 switch (ctx.body['metadata[plan]']) {
     case 'The Coastal Ambassador Program':
         plan = "plan_D8uyHuB1TW2dwB";
