@@ -29,7 +29,7 @@ stripe.customers.create({
     amount: 1000,
     currency: "cad",
     customer: customer.id
-  });
+  }, callback);
 }).catch(function(err) {
   callback(err);
   // Deal with an error
