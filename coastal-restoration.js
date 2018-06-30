@@ -29,9 +29,6 @@ if (ctx.body['metadata[subscriptionType]'] == "OneTime") {
     currency: 'usd',
     customer: customer.id,
   });
-
-  // YOUR CODE: Save the customer ID and other info in a database for later.
-
   })();
 }
 
