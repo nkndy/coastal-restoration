@@ -5,7 +5,7 @@ var postmark = require("postmark@1.6.1");
 // get correct plan id
 switch (ctx.body['metadata[plan]']) {
     case 'Coastal Warrior':
-        plan = "plan_CztNvasFByFEtE";
+        plan = "plan_D8uyHuB1TW2dwB";
         break;
     default: 
         plan = "no_plan";
