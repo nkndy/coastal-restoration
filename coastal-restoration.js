@@ -21,32 +21,8 @@ switch (ctx.body['metadata[plan]']) {
     default: 
         plan = "no_plan";
 }
+
 // setup email function
-function sendEmail() {  // Send an email:
-  var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
-  client.sendEmailWithTemplate({
-    "From": "info@clayoquotcleanup.com",
-    "To": ctx.body.email,
-    "TemplateId": 6826302,
-    "TemplateModel": {
-      "product_name": "product_name_Value",
-      "name": "name_Value",
-      "product_url": "product_url_Value",
-      "action_url": "action_url_Value",
-      "login_url": "login_url_Value",
-      "username": "username_Value",
-      "trial_length": "trial_length_Value",
-      "trial_start_date": "trial_start_date_Value",
-      "trial_end_date": "trial_end_date_Value",
-      "support_email": "support_email_Value",
-      "live_chat_url": "live_chat_url_Value",
-      "sender_name": "sender_name_Value",
-      "help_url": "help_url_Value",
-      "company_name": "company_name_Value",
-      "company_address": "company_address_Value"
-    }
-  });
-}
 
 // if one time donation create charge
 if (ctx.body['metadata[subscriptionType]'] == "OneTime") {
