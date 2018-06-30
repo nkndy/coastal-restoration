@@ -30,6 +30,7 @@ stripe.customers.create({
 }).then(function(source){
   return stripe.charges.create({
     amount: 1000,
+    currency: "cad",
     source: source
   });
 }).catch(function(err) {
