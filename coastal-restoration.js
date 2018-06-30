@@ -3,6 +3,7 @@ module.exports = function(ctx, callback) {
 var stripe = require('stripe@6.0.0')(ctx.secrets.STRIPE_SK_TEST);
 var postmark = require("postmark@1.6.1");
 // get correct plan id
+console.log(ctx.body['metadata[plan]'])
 switch (ctx.body['metadata[plan]']) {
     case 'The Coastal Ambassador Program':
         plan = "plan_D8uyHuB1TW2dwB";
