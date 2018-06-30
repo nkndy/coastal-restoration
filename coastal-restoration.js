@@ -24,8 +24,9 @@ stripe.customers.create({
       'phone': ctx.body['metadata[phone]']
   }
 }).then(function(customer){
-  return stripe.customers.createSource(customer.id, {
-    source: ctx.body['stripeToken[id]']
+  return stripe.charges.create({
+    amount: 1000,
+    customer: customer.id
   });
 }).catch(function(err) {
   callback(err);
