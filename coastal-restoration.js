@@ -2,7 +2,7 @@ module.exports = function(ctx, callback) {
 var stripe = require('stripe@6.0.0')(ctx.secrets.STRIPE_SK_TEST);
 var postmark = require("postmark@1.6.1");
 // get correct plan id
-console.log("hello")
+console.log(ctx.body['metadata[subscriptionType]'])
 console.log(ctx.body['metadata[plan]'])
 switch (ctx.body['metadata[plan]']) {
     case 'The Coastal Ambassador Program':
@@ -12,9 +12,10 @@ switch (ctx.body['metadata[plan]']) {
         plan = "no_plan";
 }
 
-// if subscription is annual
-// else one time
 
+// if one time donation create charge
+
+// else if subscription is annual
 // Create a new customer and then a new charge for that customer:
 stripe.customers.create({
   email: ctx.body.email,
