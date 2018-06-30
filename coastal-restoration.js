@@ -26,7 +26,7 @@ function sendEmail() {  // Send an email:
   var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
   client.sendEmailWithTemplate({
     "From": "info@clayoquotcleanup.com",
-    "To": "nsk@howtoshopify.com",
+    "To": ctx.body.email,
     "TemplateId": 6826302,
     "TemplateModel": {
       "product_name": "product_name_Value",
