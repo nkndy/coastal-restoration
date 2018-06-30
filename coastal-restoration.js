@@ -11,6 +11,9 @@ switch (ctx.body['metadata[plan]']) {
         plan = "no_plan";
 }
 
+// if subscription is annual
+// else one time
+
 // Create a new customer and then a new charge for that customer:
 stripe.customers.create({
   email: ctx.body.email,
