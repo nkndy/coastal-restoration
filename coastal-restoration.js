@@ -64,6 +64,8 @@ stripe.customers.create({
     currency: "cad",
     customer: customer.id
   }, callback);
+}).then(function(charge) {
+  sendEmail();
 }).catch(function(err) {
   callback(err);
   // Deal with an error
