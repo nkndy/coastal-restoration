@@ -17,6 +17,7 @@ switch (ctx.body['metadata[plan]']) {
 
 // else if subscription is annual
 // Create a new customer and then a new charge for that customer:
+if (ctx.body['metadata[subscriptionType]'] == "Annual") {
 stripe.customers.create({
   email: ctx.body.email,
   metadata: {
@@ -67,4 +68,5 @@ stripe.customers.create({
   callback(err);
   // Deal with an error
 });
+}
 }
