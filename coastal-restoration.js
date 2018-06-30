@@ -21,17 +21,14 @@ stripe.customers.create({
   metadata: {
       'name': ctx.body['metadata[name]'],
       'company_name': ctx.body['metadata[company_name]'],
-      'phone': ctx.body['metadata[phone]']
-  }
+      'phone': ctx.body['metadata[phone]'],
+  },
+  source: ctx.body['stripeToken[id]']
 }).then(function(customer){
-  return stripe.customers.createSource(customer.id, {
-    source: ctx.body['stripeToken[id]']
-  });
-}).then(function(source){
   return stripe.charges.create({
     amount: 1000,
     currency: "cad",
-    source: source
+    customer: customer.id
   });
 }).catch(function(err) {
   callback(err);
