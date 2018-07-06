@@ -103,9 +103,12 @@ stripe.customers.create({
       "company_name": "company_name_Value",
       "company_address": "company_address_Value"
     }
-  }).catch(function(err) {
-    callback(err);
-    // Deal with an error
+  }, function(error, result) {
+    if(error) {
+        console.error("Unable to send via postmark: " + error.message);
+        return;
+    }
+    console.info("Sent to postmark for delivery")
   });
 }).catch(function(err) {
   callback(err);
