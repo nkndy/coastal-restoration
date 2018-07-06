@@ -2,8 +2,17 @@ module.exports = function(ctx, callback) {
 var stripe = require('stripe@6.0.0')(ctx.secrets.STRIPE_SK_TEST);
 var postmark = require("postmark@1.6.1");
 
-console.log(ctx.body['metadata[subscriptionType]'])
-console.log(ctx.body['metadata[plan]'])
+// console.log(ctx.body['metadata[subscriptionType]'])
+// console.log(ctx.body['metadata[plan]'])
+
+var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
+
+var newEmail = client.sendEmail({
+  "From": "info@coastrestore.com",
+  "To": "info@coastrestore.com",
+  "Subject": "Test",
+  "TextBody": "Hello from Postmark!"
+});
 
 //get one time amount
 switch (ctx.body['metadata[plan]']) {
@@ -72,30 +81,6 @@ stripe.customers.create({
     },
   ]
   }, callback);
-}).then(function(subscription) {
-  var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
-  client.sendEmailWithTemplate({
-    "From": "info@clayoquotcleanup.com",
-    "To": ctx.body.email,
-    "TemplateId": 6826302,
-    "TemplateModel": {
-      "product_name": "product_name_Value",
-      "name": "name_Value",
-      "product_url": "product_url_Value",
-      "action_url": "action_url_Value",
-      "login_url": "login_url_Value",
-      "username": "username_Value",
-      "trial_length": "trial_length_Value",
-      "trial_start_date": "trial_start_date_Value",
-      "trial_end_date": "trial_end_date_Value",
-      "support_email": "support_email_Value",
-      "live_chat_url": "live_chat_url_Value",
-      "sender_name": "sender_name_Value",
-      "help_url": "help_url_Value",
-      "company_name": "company_name_Value",
-      "company_address": "company_address_Value"
-    }
-  });
 }).catch(function(err) {
   callback(err);
   // Deal with an error
