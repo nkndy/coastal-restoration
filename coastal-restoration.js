@@ -103,6 +103,9 @@ stripe.customers.create({
       "company_name": "company_name_Value",
       "company_address": "company_address_Value"
     }
+  }).catch(function(err) {
+    callback(err);
+    // Deal with an error
   });
 }).catch(function(err) {
   callback(err);
