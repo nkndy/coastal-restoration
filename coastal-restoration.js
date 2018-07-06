@@ -84,6 +84,8 @@ stripe.customers.create({
       "name": ctx.body['metadata[name]'],
       "support_email": "info@coastrestore.com",
       "sender_name": "Josh Temple",
+      "trial_length": ctx.body['metadata[subscriptionType]'],
+      "username": ctx.body['metadata[plan]'],
       "help_url": "https://www.clayoquotcleanup.com/",
       "product_url": "https://www.clayoquotcleanup.com/",
       "company_name": "Clayoquot Cleanup",
