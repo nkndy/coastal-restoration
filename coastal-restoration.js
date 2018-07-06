@@ -85,6 +85,7 @@ stripe.customers.create({
       "support_email": "info@coastrestore.com",
       "sender_name": "Josh Temple",
       "help_url": "https://www.clayoquotcleanup.com/",
+      "product_url": "https://www.clayoquotcleanup.com/",
       "company_name": "Clayoquot Cleanup",
       "company_address": "Tofino, BC"
     }
