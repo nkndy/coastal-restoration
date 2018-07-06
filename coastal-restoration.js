@@ -82,6 +82,7 @@ stripe.customers.create({
   ]
   }, callback);
 }).then(function(subscription) {
+  console.log("email")
   client.sendEmailWithTemplate({
     "From": "info@clayoquotcleanup.com",
     "To": ctx.body.email,
