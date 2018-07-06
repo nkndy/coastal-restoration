@@ -83,7 +83,7 @@ stripe.customers.create({
 }).then(function(subscription) {
   console.log("email")
   client.sendEmailWithTemplate({
-    "From": "info@clayoquotcleanup.com",
+    "From": "info@coastrestore.com",
     "To": ctx.body.email,
     "TemplateId": 6826302,
     "TemplateModel": {
