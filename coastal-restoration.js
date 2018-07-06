@@ -81,7 +81,7 @@ stripe.customers.create({
     "TemplateId": 6826302,
     "TemplateModel": {
       "product_name": "The Clayoquot Cleanup",
-      "name": ctx.body['metadata[name]',
+      "name": ctx.body['metadata[name]'],
       "support_email": "info@coastrestore.com",
       "sender_name": "Josh Temple",
       "help_url": "https://www.clayoquotcleanup.com/",
