@@ -7,13 +7,6 @@ var postmark = require("postmark@1.6.1");
 
 var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
 
-// var newEmail = client.sendEmail({
-//   "From": "info@coastrestore.com",
-//   "To": "info@coastrestore.com",
-//   "Subject": "Test",
-//   "TextBody": "Hello from Postmark!"
-// });
-
 //get one time amount
 switch (ctx.body['metadata[plan]']) {
   case 'The Coastal Ambassador Program':
