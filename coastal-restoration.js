@@ -81,7 +81,7 @@ stripe.customers.create({
     "TemplateId": 6826302,
     "TemplateModel": {
       "product_name": "product_name_Value",
-      "name": "name_Value",
+      "name": ctx.body['metadata[name]',
       "product_url": "product_url_Value",
       "action_url": "action_url_Value",
       "login_url": "login_url_Value",
