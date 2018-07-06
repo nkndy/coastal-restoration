@@ -80,10 +80,7 @@ stripe.customers.create({
       plan: plan,
     },
   ]
-  }, callback);
-}).catch(function(err) {
+  }).catch(function(err) {
   callback(err);
   // Deal with an error
 });
-}
-};
