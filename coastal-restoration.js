@@ -6,6 +6,15 @@ var postmark = require("postmark@1.6.1");
 // console.log(ctx.body['metadata[plan]'])
 console.log(ctx.body)
 
+// Initialize CORS
+ctx.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
 
 //get one time amount
