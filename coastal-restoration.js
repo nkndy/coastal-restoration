@@ -9,7 +9,7 @@ var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
 
 //get one time amount
 switch (ctx.body['metadata[plan]']) {
-  case 'The Coastal Ambassador Program':
+  case 'Coastal Ambassador':
       amount = 50000;
       break;
   default: 
@@ -17,7 +17,7 @@ switch (ctx.body['metadata[plan]']) {
 }
 // get subscription id
 switch (ctx.body['metadata[plan]']) {
-    case 'The Coastal Ambassador Program':
+    case 'Coastal Ambassador':
         plan = "plan_D8uyHuB1TW2dwB";
         break;
     default: 
