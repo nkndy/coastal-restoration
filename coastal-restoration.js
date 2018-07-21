@@ -20,6 +20,7 @@ switch (ctx.body['metadata[plan]']) {
 function getPlan(plan) {
   switch (plan) {
       case 'Coastal Ambassador':
+          console.log(plan)
           plan = "plan_D8uyHuB1TW2dwB";
           break;
       default: 
