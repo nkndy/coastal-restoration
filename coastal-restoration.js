@@ -21,9 +21,17 @@ function getPlan(plan) {
   console.log('plan');
   switch (plan) {
       case 'Coastal Ambassador':
-          console.log('plan')
           return "plan_D8uyHuB1TW2dwB";
           break;
+      case 'Salmon School':
+        return "plan_D8uzpBBuQSVhXu";
+        break;
+      case 'Wolf Pack':
+        return "plan_D8v0F5EVDGA9qY";
+        break;
+      case 'Orca Pod':
+        return "plan_D8v09mWfR61P9d";
+        break;                
       default: 
           return "no_plan";
   }
