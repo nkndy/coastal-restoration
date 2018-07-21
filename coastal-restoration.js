@@ -18,6 +18,7 @@ switch (ctx.body['metadata[plan]']) {
 }
 // get subscription id
 function getPlan(plan) {
+  console.log('plan');
   switch (plan) {
       case 'Coastal Ambassador':
           console.log('plan')
