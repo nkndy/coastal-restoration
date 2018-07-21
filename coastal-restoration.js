@@ -19,7 +19,7 @@ switch (ctx.body['metadata[plan]']) {
   case 'Wolf Pack':
       amount = 500000;
       break;
-  case 'Coastal Ambassador':
+  case 'Orca Pod':
       amount = 2500000;
       break;      
   default: 
