@@ -31,7 +31,7 @@ function getPlan(plan) {
 
 // setup email function
 function sendEmail() {
-console.log("email")
+  console.log("email")
   client.sendEmailWithTemplate({
     "From": "info@coastrestore.com",
     "To": ctx.body.email,
@@ -47,7 +47,7 @@ console.log("email")
       "product_url": "https://www.clayoquotcleanup.com/",
       "company_name": "Clayoquot Cleanup",
       "company_address": "Tofino, BC"
-    }
+  });
 }
 
 // if one time donation create charge
@@ -99,7 +99,7 @@ stripe.customers.create({
   ]
   }, callback);
 }).then(function(subscription) {
-  
+    sendEmail();
   }, function(error, result) {
     if(error) {
         console.error("Unable to send via postmark: " + error.message);
