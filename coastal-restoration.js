@@ -22,10 +22,10 @@ function getPlan(plan) {
   switch (plan) {
       case 'Coastal Ambassador':
           console.log('plan')
-          plan = "plan_D8uyHuB1TW2dwB";
+          return "plan_D8uyHuB1TW2dwB";
           break;
       default: 
-          plan = "no_plan";
+          return "no_plan";
   }
 }
 
