@@ -58,6 +58,7 @@ stripe.customers.create({
 // If subscription is annual
 // Create a new customer and then a new charge for that customer:
 if (ctx.body['metadata[subscriptionType]'] == "Annual") {
+  console.log("annual")
 stripe.customers.create({
   email: ctx.body.email,
   metadata: {
