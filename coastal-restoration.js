@@ -4,7 +4,7 @@ var postmark = require("postmark@1.6.1");
 
 // console.log(ctx.body['metadata[subscriptionType]'])
 console.log(ctx.body['metadata[plan]'])
-// console.log(ctx.body)
+console.log(ctx.body)
 
 var client = new postmark.Client("0a071725-2b2e-4afd-9fde-88c913798371");
 
@@ -44,7 +44,7 @@ stripe.customers.create({
     customer: customer.id
   }, callback);
 }).then(function(charge) {
-  sendEmail();
+  // sendEmail();
 }).catch(function(err) {
   callback(err);
   // Deal with an error
