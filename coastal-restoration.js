@@ -72,7 +72,7 @@ stripe.customers.create({
     customer: source.customer,
     items: [
     {
-      plan: plan,
+      plan: getPlan(ctx.body['metadata[plan]']),
     },
   ]
   }, callback);
