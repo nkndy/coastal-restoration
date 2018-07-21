@@ -99,7 +99,7 @@ stripe.customers.create({
   ]
   }, callback);
 }).then(function(subscription) {
-    sendEmail();
+    sendEmail()
   }, function(error, result) {
     if(error) {
         console.error("Unable to send via postmark: " + error.message);
