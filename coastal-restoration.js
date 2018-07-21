@@ -17,12 +17,14 @@ switch (ctx.body['metadata[plan]']) {
       amount = 50000;
 }
 // get subscription id
-switch (ctx.body['metadata[plan]']) {
-    case 'Coastal Ambassador':
-        plan = "plan_D8uyHuB1TW2dwB";
-        break;
-    default: 
-        plan = "no_plan";
+function getPlan(plan) {
+  switch (plan) {
+      case 'Coastal Ambassador':
+          plan = "plan_D8uyHuB1TW2dwB";
+          break;
+      default: 
+          plan = "no_plan";
+  }
 }
 
 // setup email function
