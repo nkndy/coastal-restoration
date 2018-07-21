@@ -13,6 +13,15 @@ switch (ctx.body['metadata[plan]']) {
   case 'Coastal Ambassador':
       amount = 50000;
       break;
+  case 'Coastal Ambassador':
+      amount = 50000;
+      break;
+  case 'Coastal Ambassador':
+      amount = 50000;
+      break;
+  case 'Coastal Ambassador':
+      amount = 50000;
+      break;      
   default: 
       amount = 50000;
 }
@@ -33,7 +42,7 @@ function getPlan(plan) {
         return "plan_D8v09mWfR61P9d";
         break;                
       default: 
-          return "no_plan";
+          return "plan_D8uyHuB1TW2dwB";
   }
 }
 
