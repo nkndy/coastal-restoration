@@ -13,14 +13,14 @@ switch (ctx.body['metadata[plan]']) {
   case 'Coastal Ambassador':
       amount = 50000;
       break;
-  case 'Coastal Ambassador':
-      amount = 50000;
+  case 'Salmon School':
+      amount = 150000;
+      break;
+  case 'Wolf Pack':
+      amount = 500000;
       break;
   case 'Coastal Ambassador':
-      amount = 50000;
-      break;
-  case 'Coastal Ambassador':
-      amount = 50000;
+      amount = 2500000;
       break;      
   default: 
       amount = 50000;
