@@ -1,5 +1,5 @@
 module.exports = function(ctx, callback) {
-var stripe = require('stripe@6.0.0')(ctx.secrets.STRIPE_SK_TEST);
+var stripe = require('stripe@6.0.0')(ctx.secrets.STRIPE_SK_LIVE);
 var postmark = require("postmark@1.6.1");
 
 console.log(ctx.body['metadata[subscriptionType]'])
